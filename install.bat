@@ -40,7 +40,7 @@ if errorlevel 1 (
 
 rem Sanity-Check: die .exe ist ~33 MB, alles unter 1 MB ist kaputt (z.B. HTML-Fehlerseite).
 for %%f in ("%NEW%") do if %%~zf LSS 1000000 (
-  echo [%time%] FEHLER: Download zu klein (%%~zf Bytes) -- behalte alte Version. >> "%LOG%"
+  echo [%time%] FEHLER: Download zu klein, nur %%~zf Bytes -- behalte alte Version. >> "%LOG%"
   del "%NEW%" >nul 2>&1
   goto restart_old
 )
