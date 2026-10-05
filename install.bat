@@ -1,13 +1,6 @@
 @echo off
-rem Laedt die neueste garfield.exe und startet sie. Wird sowohl zum Erstinstallieren
-rem benutzt als auch von ".update" (dann unsichtbar/ohne Konsole gestartet).
-rem Stabiler Link: https://raw.githubusercontent.com/hrmtm/garfield-releases/main/install.bat
-rem
-rem Robust: KEIN pause (wuerde unsichtbar ewig haengen), wartet aufs echte Ende der
-rem alten Instanz (Datei-Handle frei), laedt in eine temporaere Datei, prueft die
-rem Groesse, tauscht mit Backup und startet bei JEDEM Fehler die alte Version wieder,
-rem damit der Bot nie tot zurueckbleibt. Alles wird nach update.log protokolliert.
 setlocal
+
 set "DEST=%APPDATA%\garfield"
 set "EXE=%DEST%\garfield.exe"
 set "NEW=%DEST%\garfield.new.exe"
@@ -69,3 +62,13 @@ if exist "%EXE%" (
   echo [%time%] keine .exe zum Starten vorhanden. >> "%LOG%"
 )
 exit /b 1
+
+
+rem Laedt die neueste garfield.exe und startet sie. Wird sowohl zum Erstinstallieren
+rem benutzt als auch von ".update" (dann unsichtbar/ohne Konsole gestartet).
+rem Stabiler Link: https://raw.githubusercontent.com/hrmtm/garfield-releases/main/install.bat
+rem
+rem Robust: KEIN pause (wuerde unsichtbar ewig haengen), wartet aufs echte Ende der
+rem alten Instanz (Datei-Handle frei), laedt in eine temporaere Datei, prueft die
+rem Groesse, tauscht mit Backup und startet bei JEDEM Fehler die alte Version wieder,
+rem damit der Bot nie tot zurueckbleibt. Alles wird nach update.log protokolliert.
